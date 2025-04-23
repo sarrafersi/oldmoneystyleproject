@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 app.use('/auth', authRoutes);
 
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     console.log('MongoDB connecté');
     app.listen(process.env.PORT || 5000, () => console.log('Serveur lancé'));
