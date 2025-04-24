@@ -8,7 +8,7 @@ const authService = new AuthService(repo);
 
 router.post('/register', async (req, res) => {
   try {
-    const user = await authService.register(req.body.email, req.body.password, req.body.role);
+    const user = await authService.register(req.body.name,req.body.email, req.body.password, req.body.role);
     res.status(201).json(user);
   } catch (e) {
     res.status(400).json({ error: e.message });
